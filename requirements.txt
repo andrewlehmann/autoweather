@@ -1,0 +1,3 @@
+pip install BeautifulSoup
+apt-get install python-keyring
+pip install twillo
