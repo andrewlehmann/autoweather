@@ -6,7 +6,7 @@ with open('LICENSE') as f:
 
 setup(name = 'autoWeather',
 	version= '1.0',
-	description = 'automatically text you the weather at 8am',
+	description = 'automatically texts me the weather at 8am',
 	author='Andrew Lehmann',
 	author_email='andrew@arlehmann.com',
 	url='https://github.com/andrewlehmann/autoweather',

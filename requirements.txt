@@ -1,4 +1,21 @@
-apt-get install python-keyring
+apt-get install python-keyring (pip install is screwy for keyring's dependencies, this includes both keyring and its dependencies)
 pip install twilio
 pip install requests
 pip install schedule
+
+
+In order for this code to work as-is, one will need to set their passwords (username/authToken for twilio) with keyring.
+
+to do this, open the terminal, start python, import keyring, and then use 
+
+>>>keyring.set_password("Twilio", "SampleUser", "username")
+>>>keyring.set_password("Twilio", "SampleAuth", "authToken")
+
+
+then, you can access that information via
+
+>>> user = keyring.get_password("Twilio", "SampleUser")
+>>> auth = keyring.get_password("Twilio", "SampleAuth")
+
+
+This was mostly implemented so that I could display this information online without making my API key public.
