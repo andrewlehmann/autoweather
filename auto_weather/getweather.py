@@ -5,11 +5,11 @@ import urllib2
 
 def get_weather(lat, lon):
 	url = 'http://forecast.weather.gov/MapClick.php?lat=' + \
-		lat + '&lon=' + long + '&FcstType=json'
+		str(lat) + '&lon=' + str(lon) + '&FcstType=json'
 	response = urllib2.urlopen(url)
 	data = json.load(response)
-	current_temp = data[3]['temp'][0]
-	low = data[2]['temperature'][0]
-	high = data[2]['temperature'][1]
-	desc = data[2]['text'][0]
+	current_temp = data['currentobservation']['Temp']
+	low = data['data']['temperature'][0]
+	high = data['data']['temperature'][1]
+	desc = data['data']['text'][0]
 	return current_temp, low, high, desc
