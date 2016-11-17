@@ -11,6 +11,7 @@ def get_location(ip):
 	url = 'http://ipinfo.io/' + ip + '/json'
 	response = urllib2.urlopen(url)
 	data = json.load(response)
-	lat = data['loc'][0]
-	longitude = data['loc'][1]
-	return lat, longitude
+	loc = data['loc']
+	lat = loc.split(',')[0]
+	lon = loc.split(',')[1]
+	return lat, lon
