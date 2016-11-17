@@ -9,6 +9,6 @@ setup(name = 'autoWeather',
 	description = 'automatically text you the weather at 8am',
 	author='Andrew Lehmann',
 	author_email='andrew@arlehmann.com',
-	url='https://github.com/andrewlehmann/autoweatherd',
+	url='https://github.com/andrewlehmann/autoweather',
 	license = license1,
 	packages=find_packages(exclude='tests')
