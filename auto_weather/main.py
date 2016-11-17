@@ -1,11 +1,12 @@
 import schedule
 import time
-import sendmessage
-import location
-import getweather
 
 
 def job():
+	import sendmessage
+	import location
+	import getweather
+	
 	ip = location.get_ip()
 	lat, lon = location.get_location(ip)
 	weather = getweather.get_weather(lat, lon)
