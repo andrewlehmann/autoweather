@@ -18,12 +18,12 @@ def job():
 
 
 def main():
-	'''schedule.every().day.at("07:31").do(job, 'job running')
+	schedule.every().day.at("08:00").do(job, 'job running')
 
 	while True:
 		schedule.run_pending()
-		time.sleep(60)'''
-	job()
+		time.sleep(60)
+	
 
 if __name__ == "__main__":
 	main()
