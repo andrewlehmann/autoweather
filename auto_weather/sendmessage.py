@@ -23,6 +23,7 @@ def send_message(t_phone, my_phone, msg):
 def phone_numbers():
 	twilio_phone = keyring.get_password("Twiliophone", "phone")
 	my_phone = keyring.get_password("myphone", "phone")
+	return twilio_phone, my_phone
 
 	
 
