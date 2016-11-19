@@ -18,4 +18,4 @@ then, you can access that information via
 >>> auth = keyring.get_password("Twilio", "SampleAuth")
 
 
-Keyring was mostly implemented so that I could display this information online without making my API key public.
+Keyring was mostly implemented so that I could display this project's code online without making my API key public.
