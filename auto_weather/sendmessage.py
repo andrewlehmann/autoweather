@@ -13,8 +13,6 @@ def phone_numbers():
 	return twilio_phone, my_phone
 
 def create_message(w_list):
-	sid, auth = twilio_creds()
-	t = TwilioRestClient(account=sid, token=auth)
 	message = 'Current temp: %s \nLow: %s \nHigh: %s \nDescription: %s \n'\
 	 % (w_list[0], w_list[1], w_list[2], w_list[3])
 	return message
