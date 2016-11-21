@@ -19,11 +19,11 @@ def job():
 
 
 def main():
-    # schedule.every().day.at("08:00").do(job)
-    job()
-    # while True:
-    #    schedule.run_pending()
-    #    time.sleep(60)
+    schedule.every().day.at("08:00").do(job)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
 
 
 if __name__ == "__main__":
