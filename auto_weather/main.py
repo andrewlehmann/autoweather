@@ -16,7 +16,6 @@ def job():
 
     msg = sendmessage.create_message(weather)
     sendmessage.send_message(msg) # send text message
-    return
 
 
 def main():
