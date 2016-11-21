@@ -28,4 +28,3 @@ def send_message(msg):
     sid, auth = twilio_creds()
     t = TwilioRestClient(sid, auth)
     t.messages.create(body=msg, from_=t_phone, to=m_phone)
-    return
