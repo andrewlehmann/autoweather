@@ -1,7 +1,5 @@
 import unittest
-#import auto_weather
 from .context import location
-#from auto_weather.auto_weather import location
 
 class Test(unittest.TestCase):
 
