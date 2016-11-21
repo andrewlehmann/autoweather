@@ -9,7 +9,8 @@ def get_weather(lat, lon):
         str(lat) + '&lon=' + str(lon) + '&FcstType=json'
     response = urllib2.urlopen(url)
     data = json.load(response)
-    return parse(data)
+    weather = parse(data)  # better to make variable here or
+    return weather         # return parse(data)?
 
 
 def parse(data):
