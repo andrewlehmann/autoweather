@@ -13,7 +13,6 @@ def auth(db):
     username = get_password("MongoDB", "username")
     password = get_password("MongoDB", "password")
     db.authenticate(username, password)
-    return
 
 
 def insert(w_list):
@@ -22,4 +21,3 @@ def insert(w_list):
     weather_log = db.weather_log
     result = weather_log.insert_one(w_list)
     print result
-    return
