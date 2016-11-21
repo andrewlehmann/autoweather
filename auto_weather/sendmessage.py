@@ -15,8 +15,11 @@ def phone_numbers():
 
 
 def create_message(w_list):
-	message = 'Current temp: %s \nLow: %s \nHigh: %s \nDescription: %s \n'\
-	 % tuple(w_list)
+	message = '''Current temp: {w[Curr_Temp]} 
+	Low: {w[Low]} 
+	High: {w[High]} 
+	Description: {w[Description]}'''
+	message = message.format(w=w_list)
 	return message
 
 

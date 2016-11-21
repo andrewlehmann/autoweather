@@ -13,6 +13,11 @@ def get_weather(lat, lon):
 	low = data['data']['temperature'][0]
 	high = data['data']['temperature'][1]
 	desc = data['data']['text'][0]
-	w_list = [current_temp, low, high, desc]
-	
+	w_list = {
+		"Current Temp": current_temp, 
+		"Low": low, 
+		"High": high, 
+		"Description": desc,
+		}
+
 	return w_list

@@ -6,7 +6,13 @@ class Test(unittest.TestCase):
 
 	
 	def test_create_message(self):
-		self.assertEqual(sendmessage.create_message([5, 5, 10, 'lol']), 'Current temp: 5 \nLow: 5 \nHigh: 10 \nDescription: lol \n')
+		w_dict = {
+			"Curr_Temp": 5,
+			"Low": 5,
+			"High": 10,
+			"Description": "lol",
+		}
+		self.assertEqual(sendmessage.create_message(w_dict), 'Current temp: 5 \n\tLow: 5 \n\tHigh: 10 \n\tDescription: lol')
 
 
 	if __name__ == '__main__':
