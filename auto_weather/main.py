@@ -17,17 +17,15 @@ def job():
 
 	msg = sendmessage.create_message(weather)	
 	sendmessage.send_message(msg)
-	today = time.strftime("%x")
-	print 'message sent on %s' % today
 	return
 
 
 def main():
-	#schedule.every().day.at("08:00").do(job)
-	job()
-	#while True:
-	#	schedule.run_pending()
-	#	time.sleep(60)
+	schedule.every().day.at("08:00").do(job)
+	#()
+	while True:
+		schedule.run_pending()
+		time.sleep(60)
 	
 
 if __name__ == "__main__":
