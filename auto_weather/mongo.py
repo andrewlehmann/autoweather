@@ -19,7 +19,6 @@ def auth(db):
 def insert(w_list):
     db = connection().weather
     auth(db)
-
     weather_log = db.weather_log
     result = weather_log.insert_one(w_list)
     print result
