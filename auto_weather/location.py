@@ -4,7 +4,7 @@ import urllib2
 
 
 def get_ip():
-	ip = requests.get('https://api.ipify.org', verify=False).text
+	ip = requests.get('https://api.ipify.org').text
 	return ip
 
 
