@@ -7,28 +7,27 @@ import mongo
 
 
 def job():
-	
-	lat, lon = location.get_location()
-	weather = getweather.get_weather(lat, lon)	#retrieve weather info
-	print 'got weather'
 
-	mongo.insert(weather)			#put info in database
-	print 'data inserted'
+    lat, lon = location.get_location()
+    weather = getweather.get_weather(lat, lon)  # retrieve weather info
+    print 'got weather'
 
-	msg = sendmessage.create_message(weather)	
-	sendmessage.send_message(msg)
-	print 'message sent'
-	return
+    mongo.insert(weather)           # put info in database
+    print 'data inserted'
+
+    msg = sendmessage.create_message(weather)
+    sendmessage.send_message(msg)
+    print 'message sent'
+    return
 
 
 def main():
-	#schedule.every().day.at("08:00").do(job)
-	job()
-	
-	#while True:
-	#	schedule.run_pending()
-	#	time.sleep(60)
-	
+    # schedule.every().day.at("08:00").do(job)
+    job()
+    # while True:
+    #    schedule.run_pending()
+    #    time.sleep(60)
+
 
 if __name__ == "__main__":
-	main()
+    main()
