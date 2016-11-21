@@ -10,14 +10,11 @@ def job():
 
     lat, lon = location.get_location()
     weather = getweather.get_weather(lat, lon)  # retrieve weather info
-    print 'got weather'
 
     mongo.insert(weather)           # put info in database
-    print 'data inserted'
 
     msg = sendmessage.create_message(weather)
-    sendmessage.send_message(msg)
-    print 'message sent'
+    sendmessage.send_message(msg) # send text message
     return
 
 
