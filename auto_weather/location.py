@@ -8,8 +8,8 @@ def get_ip():
 	return ip
 
 
-def get_location(ip):
-	url = 'http://ipinfo.io/' + ip + '/json' #todo: instead of passing in IP, call the function here to make more pythonic
+def get_location():
+	url = 'http://ipinfo.io/' + get_ip() + '/json' #todo: instead of passing in IP, call the function here to make more pythonic
 	response = urllib2.urlopen(url)
 	data = json.load(response)
 	loc = data['loc']

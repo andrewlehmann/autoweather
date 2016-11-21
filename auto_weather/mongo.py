@@ -1,17 +1,26 @@
-import PyMongo
-import keyring
+import pymongo
+from keyring import get_password
 
 
-def get_database():
-	username = keyring.get_password("MongoDB", "username")
-	password = keyring.get_password("MongoDB", "password")
-	connection_string = 'mongodb://%s:%s@ds159507.mlab.com:59507' % (username, password)
-	client = MongoClient(connection_string)
-	db = client.weather
-	return db
+def connection():
+	connection_info = ['ds159507.mlab.com', 59507]
+	client = pymongo.MongoClient(*connection_info)
+	return client
 
-def insert(db, w_list):
-	result = db.insert_one(w_list)
+
+def auth(db):
+	username = get_password("MongoDB", "username")
+	password = get_password("MongoDB", "password")
+	db.authenticate(username, password)
+	return
+
+
+def insert(w_list):
+	db = connection().weather
+	auth(db)
+
+	weather_log = db.weather_log
+	result = weather_log.insert_one(w_list)
 	return
 
 
