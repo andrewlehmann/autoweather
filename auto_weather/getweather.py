@@ -9,7 +9,6 @@ def get_weather(lat, lon):
 		str(lat) + '&lon=' + str(lon) + '&FcstType=json'
 	response = urllib2.urlopen(url)
 	data = json.load(response)		#load json weather info
-	print url
 	current_temp = data['currentobservation']['Temp']
 	low = data['data']['temperature'][0]
 	high = data['data']['temperature'][1]
