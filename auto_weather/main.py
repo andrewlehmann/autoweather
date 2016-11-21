@@ -14,12 +14,13 @@ def job():
 	msg = sendmessage.create_message(weather)
 	t_phone, m_phone = sendmessage.phone_numbers()
 	sendmessage.send_message(t_phone, m_phone, msg)
-	print 'message sent'
+	now = time.strftime("%c")
+	print 'message sent at %s' % now
 	return
 
 
 def main():
-	schedule.every().day.at("08:00").do(job, 'job running')
+	schedule.every().day.at("18:57").do(job())
 
 	while True:
 		schedule.run_pending()
