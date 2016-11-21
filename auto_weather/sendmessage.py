@@ -7,10 +7,12 @@ def twilio_creds(): #twillo credentials
 	auth = keyring.get_password("Twilloauth", "auth")
 	return sid, auth
 
+
 def phone_numbers():
 	twilio_phone = keyring.get_password("Twiliophone", "phone")
 	my_phone = keyring.get_password("myphone", "phone")
 	return twilio_phone, my_phone
+
 
 def create_message(w_list):
 	message = 'Current temp: %s \nLow: %s \nHigh: %s \nDescription: %s \n'\
