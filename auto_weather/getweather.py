@@ -12,7 +12,7 @@ def get_weather(lat, lon):
     low = data['data']['temperature'][0]
     high = data['data']['temperature'][1]
     desc = data['data']['text'][0]
-
+    # put all data into a dictionary for easy db storage
     w_list = {
         "Current_Temp": current_temp,
         "Low": low,
