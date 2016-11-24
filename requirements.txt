@@ -8,7 +8,7 @@ In order for this code to work as-is, one will need to set their passwords (user
 
 to do this, open the terminal, start python, import keyring, and then use 
 
->>>keyring.set_password("Twilio", "SampleUser", "username")
+>>>keyring.set_password("Twilio", "SampleUser", "username") 
 >>>keyring.set_password("Twilio", "SampleAuth", "authToken")
 
 
