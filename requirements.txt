@@ -1,4 +1,4 @@
-apt-get install python-keyring (pip install is screwy for keyring's dependencies, this includes both keyring and its dependencies)
+apt-get install python-keyring (pip install is screwy for keyring's dependencies, this package includes both keyring and its dependencies)
 pip install twilio
 pip install requests
 pip install schedule
