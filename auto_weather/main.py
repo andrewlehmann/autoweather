@@ -15,12 +15,11 @@ def job():
     mongo.insert(weather)           # put info in database
 
     msg = sendmessage.create_message(weather)
-    sendmessage.send_message(msg) # send text message
+    sendmessage.send_message(msg)  # send text message
 
 
 def main():
     schedule.every().day.at("08:00").do(job)
-
     while True:
         schedule.run_pending()
         time.sleep(60)
