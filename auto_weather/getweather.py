@@ -3,16 +3,15 @@ import urllib2
 
 from time import strftime
 
-
+#retrieve and load json data from weather.gov
 def get_weather(lat, lon):
     url = 'http://forecast.weather.gov/MapClick.php?lat=' + \
         str(lat) + '&lon=' + str(lon) + '&FcstType=json'
     response = urllib2.urlopen(url)
     data = json.load(response)
-    weather = parse(data)  # better to make variable here or
-    return weather         # return parse(data)?
+    return parse(data)
 
-
+#parse json data into json format and return dict of data
 def parse(data):
     current_temp = data['currentobservation']['Temp']
     low = data['data']['temperature'][0]
