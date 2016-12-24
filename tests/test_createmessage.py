@@ -12,6 +12,7 @@ class Test(unittest.TestCase):
             "High": 10,
             "Description": "lol",
         }
+        
         _string = 'Current temp: 5 \n\tLow: 5 \n\tHigh: 10' \
             ' \n\tDescription: lol'
         self.assertEqual(sendmessage.create_message(w_dict), _string)
