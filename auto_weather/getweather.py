@@ -33,6 +33,7 @@ def parse(data):
     return w_list
 
 
+# check whether the leading entry in temp is the high or the low
 def high_low_check(data):
     if data['time']['tempLabel'][0] == "High":
         high_num = 0
