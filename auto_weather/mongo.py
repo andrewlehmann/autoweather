@@ -18,7 +18,7 @@ def auth(db):
     db.authenticate(username, password)
 
 
-def select_db_document():
+def select_db_collection():
     db = connection().weather
     auth(db)
     weather_log = db.weather_log
@@ -26,6 +26,18 @@ def select_db_document():
 
 
 def insert(w_list):
-    weather_log = select_db_document()
+    weather_log = select_db_collection()
     result = weather_log.insert_one(w_list)
+    avg_high_and_low(weather_log, w_list)
     print result
+
+
+def avg_high_and_low(weather_log, w_list):
+    highs = []
+    lows = []
+    for obj in weather_log.find():
+        highs.append(int(obj['High']))
+        lows.append(int(obj['Low']))
+    high_avg = sum(highs) / len(highs)
+    lows_avg = sum(lows) / len(lows)
+    return high_avg, lows_avg
