@@ -18,7 +18,7 @@ def auth(db):
     db.authenticate(username, password)
 
 
-def select_db_collection():
+def select_db_collection(): # select collection within document
     db = connection().weather
     auth(db)
     weather_log = db.weather_log
