@@ -4,7 +4,6 @@ from keyring import get_password
 
 
 def connection():
-    # connection_info = ['ds159507.mlab.com', 59507]
     connection_info = []
     connection_info.append(get_password("MongoDB", "ConnName"))
     connection_info.append(int(get_password("MongoDB", "port")))
