@@ -14,6 +14,7 @@ def job():
     mongo.insert(weather)           # put info in database
     msg = sendmessage.create_message(weather)
     sendmessage.send_message(msg)  # send text message
+    print "Message sent"
 
 
 def main():
