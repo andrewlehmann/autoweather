@@ -31,7 +31,7 @@ def insert(w_list):
     print result
 
 
-def avg_high_and_low(w_list):
+def avg_high_and_low(w_list): # calculate avg of highs and lows
     highs = []
     lows = []
     weather_log = select_db_collection()
