@@ -28,13 +28,13 @@ def select_db_collection():
 def insert(w_list):
     weather_log = select_db_collection()
     result = weather_log.insert_one(w_list)
-    avg_high_and_low(weather_log, w_list)
     print result
 
 
-def avg_high_and_low(weather_log, w_list):
+def avg_high_and_low(w_list):
     highs = []
     lows = []
+    weather_log = select_db_collection()
     for obj in weather_log.find():
         highs.append(int(obj['High']))
         lows.append(int(obj['Low']))
