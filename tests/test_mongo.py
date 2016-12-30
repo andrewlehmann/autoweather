@@ -10,7 +10,7 @@ class Test(unittest.TestCase):
         client = mongo.pymongo.MongoClient(*connection_info)
         self.assertEqual(client, mongo.connection())
 
-    def test_insert(self):
+    def test_insert(self): # add extra junk data to document
         w_info = {
             "Current_Temp": 55,
             "Low": 35,
