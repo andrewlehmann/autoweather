@@ -6,7 +6,7 @@ from time import strftime
 
 # retrieve and load json data from weather.gov
 def get_weather(lat, lon):
-    print "getting json data"
+    print "getting json data" # status checks
     url = 'http://forecast.weather.gov/MapClick.php?lat=' + \
         str(lat) + '&lon=' + str(lon) + '&FcstType=json'
     response = urllib2.urlopen(url)
