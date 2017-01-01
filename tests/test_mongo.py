@@ -11,6 +11,7 @@ class Test(unittest.TestCase):
         self.assertEqual(client, mongo.connection())
 
     def test_insert(self): # add extra junk data to document
+                           # to later test average
         w_info = {
             "Current_Temp": 55,
             "Low": 35,
