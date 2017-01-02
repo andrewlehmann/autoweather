@@ -3,7 +3,7 @@ import pymongo
 from keyring import get_password
 
 
-def connection():
+def connection(): # get connection info w/ keyring
     connection_info = []
     connection_info.append(get_password("MongoDB", "ConnName"))
     connection_info.append(int(get_password("MongoDB", "port")))
@@ -11,7 +11,7 @@ def connection():
     return client
 
 
-def auth(db):
+def auth(db): # Authenticate myself with remote DB
     username = get_password("MongoDB", "username")
     password = get_password("MongoDB", "password")
     db.authenticate(username, password)
@@ -31,9 +31,9 @@ def insert(w_list):
 
 
 def avg_high_and_low(w_list): # calculate avg of highs and lows
-    highs = []
-    lows = []
-    weather_log = select_db_collection()
+    highs = []                # easier to do this way than by 
+    lows = []                 # using aggregate func. in database
+    weather_log = select_db_collection() # but which is faster?
     for obj in weather_log.find():
         highs.append(int(obj['High']))
         lows.append(int(obj['Low']))
