@@ -21,14 +21,15 @@ def job():
     message.send_message(msg)  # send text message
     print "Message sent"
 
-
-def main():
+def automate():
     schedule.every().day.at("08:00").do(job)  # run every day at 8AM
-    # job()
     while True:  # run infinitely
         schedule.run_pending()
         time.sleep(60)  # check every 60 seconds to see if it's 8AM
 
-
+def main():
+    automate()
+    # job()
+    
 if __name__ == "__main__":
     main()
