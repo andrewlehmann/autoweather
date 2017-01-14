@@ -8,7 +8,6 @@ import mongo
 
 
 def job():
-
     lat, lon = location.get_location()  # retrieve latitude, longitude
     weather = getweather.get_weather(lat, lon)   # get weather via gps
     mongo.insert(weather)           # put info in database
