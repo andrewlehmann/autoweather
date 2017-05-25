@@ -31,7 +31,7 @@ def insert(w_list):
 
 def avg_high_and_low():  # calculate avg of highs and lows
     weather_log = select_db_collection()
-    # lambda functions retrive either high or low temp from db entry
+
     getHigh = lambda entry: int(entry['High'])
     getLow = lambda entry: int(entry['Low'])
 

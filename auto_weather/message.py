@@ -21,11 +21,13 @@ def create_message(w_list):  # create actual message to be sent
         Description: {w[Description]}
         Average High: {w[Average_High]}
         Average Low: {w[Average_Low]}'''
-    return message.format(w=w_list)
+    formatted_msg = message.format(w=w_list)
+    return formatted_msg
 
 
-def send_message(msg):
+def send_message(w_list):
     t_phone, my_phone = phone_numbers()
     sid, auth = twilio_creds()
     t = Client(sid, auth)
+    msg = create_message(w_list)
     t.messages.create(body=msg, from_=t_phone, to=my_phone)

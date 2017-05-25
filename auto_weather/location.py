@@ -15,7 +15,5 @@ def get_location():
     response = urllib.request.urlopen(url)
     readable_response = response.read().decode('utf-8')
     data = json.loads(readable_response)
-    loc = data['loc']
-    lat = loc.split(',')[0]
-    lon = loc.split(',')[1]
-    return lat, lon
+    latitude, longitude = data['loc'].split(',') # lat and long parsed as string, split
+    return latitude, longitude

@@ -13,9 +13,7 @@ def job():
     mongo.insert(weather)
     # get averages for last week
     weather['Average_High'], weather['Average_Low'] = mongo.avg_high_and_low()
-    # create and send message w/ twilio
-    msg = message.create_message(weather)
-    message.send_message(msg)
+    message.send_message(weather)
     print("Message sent")
 
 
@@ -27,8 +25,8 @@ def automate():
 
 
 def main():
-    automate()
-    #job()
+    #automate()
+    job()
 
 if __name__ == "__main__":
     main()
