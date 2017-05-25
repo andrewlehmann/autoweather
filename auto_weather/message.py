@@ -1,5 +1,5 @@
 from keyring import get_password
-from twilio.rest import TwilioRestClient
+from twilio.rest import Client
 
 
 def twilio_creds():  # twillo credentials
@@ -28,5 +28,5 @@ def create_message(w_list):  # create actual message to be sent
 def send_message(msg):
     t_phone, my_phone = phone_numbers()
     sid, auth = twilio_creds()
-    t = TwilioRestClient(sid, auth)
+    t = Client(sid, auth)
     t.messages.create(body=msg, from_=t_phone, to=my_phone)

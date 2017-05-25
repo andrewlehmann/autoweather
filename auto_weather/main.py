@@ -16,7 +16,7 @@ def job():
     # create and send message w/ twilio
     msg = message.create_message(weather)
     message.send_message(msg)
-    print "Message sent"
+    print("Message sent")
 
 
 def automate():
@@ -27,8 +27,8 @@ def automate():
 
 
 def main():
-    automate()
-    # job()
+    #automate()
+    job()
 
 if __name__ == "__main__":
     main()

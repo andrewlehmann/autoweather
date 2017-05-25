@@ -26,7 +26,7 @@ def select_db_collection():  # select collection within document
 def insert(w_list):
     weather_log = select_db_collection()
     result = weather_log.insert_one(w_list)
-    print result
+    print(result)
 
 
 def avg_high_and_low(w_list):  # calculate avg of highs and lows

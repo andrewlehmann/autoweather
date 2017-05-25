@@ -1,22 +1,23 @@
 import json
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 
 from time import strftime
 
 
 # retrieve and load json data from weather.gov
 def get_weather(lat, lon):
-    print "getting json data"  # status checks
+    print("getting json data")  # status checks
     url = 'http://forecast.weather.gov/MapClick.php?lat=' + \
         str(lat) + '&lon=' + str(lon) + '&FcstType=json'
-    response = urllib2.urlopen(url)
-    data = json.load(response)
+    response = urllib.request.urlopen(url)
+    readable = response.read().decode('utf-8')
+    data = json.loads(readable)
     return parse(data)
 
 
 # parse json data into json format and return dict of data
 def parse(data):
-    print "parsing data"
+    print("parsing data")
     current_temp = data['currentobservation']['Temp']
     high_num, low_num = high_low_check(data)
     low = data['data']['temperature'][low_num]

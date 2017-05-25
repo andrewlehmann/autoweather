@@ -19,8 +19,14 @@ class Test(unittest.TestCase):
             "Description": "test",
             "Date": "2016-12-31"
         }
-        mongo.insert(w_info)
-        self.assertEqual(True, True)
+        weather_log = select_db_collection()  # but which is faster?
+
+        highs = list(map(lambda e: int(e['High']), weather_log.find()))
+        lows = list(map(lambda e: int(e['Low']), weather_log.find()))
+
+        high_avg = sum(highs) / len(highs)
+        lows_avg = sum(lows) / len(lows)
+        self.assertEqual((high_avg, low_avg), mongo.avg_high_and_low())
 
     if __name__ == '__main__':
         unittest.main()
