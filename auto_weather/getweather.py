@@ -6,7 +6,7 @@ from time import strftime
 
 # retrieve and load json data from weather.gov
 def get_weather(lat, lon):
-    print("getting json data")  # status checks
+    print("getting weather json data")  # status checks
     url = 'http://forecast.weather.gov/MapClick.php?lat=' + \
         str(lat) + '&lon=' + str(lon) + '&FcstType=json'
     response = urllib.request.urlopen(url)
@@ -35,12 +35,8 @@ def parse(data):
 
 
 # check whether the leading entry in temp is the high or the low
-# refactor this later, there's definitely a better way to do this
 def high_low_check(data):
     if data['time']['tempLabel'][0] == "High":
-        high_num = 0
-        low_num = 1
+        return 0, 1 # high num, low num
     else:
-        high_num = 1
-        low_num = 0
-    return high_num, low_num
+        return 1, 0 # low num, high num
