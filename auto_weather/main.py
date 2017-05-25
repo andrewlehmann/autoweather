@@ -12,7 +12,7 @@ def job():
     weather = getweather.get_weather(lat, lon)
     mongo.insert(weather)
     # get averages for last week
-    weather['Average_High'], weather['Average_Low'] = mongo.avg_high_and_low(weather)
+    weather['Average_High'], weather['Average_Low'] = mongo.avg_high_and_low()
     # create and send message w/ twilio
     msg = message.create_message(weather)
     message.send_message(msg)

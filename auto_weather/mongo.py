@@ -29,13 +29,15 @@ def insert(w_list):
     print(result)
 
 
-def avg_high_and_low(w_list):  # calculate avg of highs and lows
-    highs = []                # easier to do this way than by
-    lows = []                 # using aggregate func. in database
-    weather_log = select_db_collection()  # but which is faster?
-    for obj in weather_log.find():
-        highs.append(int(obj['High']))
-        lows.append(int(obj['Low']))
+def avg_high_and_low():  # calculate avg of highs and lows
+    weather_log = select_db_collection()
+    # lambda functions retrive either high or low temp from db entry
+    getHigh = lambda entry: int(entry['High'])
+    getLow = lambda entry: int(entry['Low'])
+
+    highs = list(map(getHigh, weather_log.find()))
+    lows = list(map(getLow, weather_log.find()))
+
     high_avg = sum(highs) / len(highs)
     lows_avg = sum(lows) / len(lows)
     return high_avg, lows_avg
