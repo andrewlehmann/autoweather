@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "main.py", line 34, in <module>
-    main()
-  File "main.py", line 30, in main
-    automate()
-  File "main.py", line 26, in automate
-    time.sleep(60)  # check every 60 seconds to see if it's 8AM
-KeyboardInterrupt
