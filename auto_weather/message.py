@@ -26,7 +26,7 @@ def create_message(w_list):  # create actual message to be sent
 
 
 def send_message(msg):
-    t_phone, m_phone = phone_numbers()
+    t_phone, my_phone = phone_numbers()
     sid, auth = twilio_creds()
     t = TwilioRestClient(sid, auth)
-    t.messages.create(body=msg, from_=t_phone, to=m_phone)
+    t.messages.create(body=msg, from_=t_phone, to=my_phone)
