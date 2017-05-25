@@ -14,7 +14,7 @@ def phone_numbers():
     return twilio_phone, my_phone
 
 
-def create_message(w_list): # create actual message to be sent
+def create_message(w_list):  # create actual message to be sent
     message = '''Current temp: {w[Current_Temp]}
     Low: {w[Low]}
     High: {w[High]}
