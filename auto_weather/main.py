@@ -27,8 +27,8 @@ def automate():
 
 
 def main():
-    #automate()
-    job()
+    automate()
+    #job()
 
 if __name__ == "__main__":
     main()

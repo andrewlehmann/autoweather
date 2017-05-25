@@ -16,13 +16,12 @@ def phone_numbers():
 
 def create_message(w_list):  # create actual message to be sent
     message = '''Current temp: {w[Current_Temp]}
-    Low: {w[Low]}
-    High: {w[High]}
-    Description: {w[Description]}
-    Average High: {w[Average_High]}
-    Average Low: {w[Average_Low]}'''
-    message = message.format(w=w_list)
-    return message
+        Low: {w[Low]}
+        High: {w[High]}
+        Description: {w[Description]}
+        Average High: {w[Average_High]}
+        Average Low: {w[Average_Low]}'''
+    return message.format(w=w_list)
 
 
 def send_message(msg):
